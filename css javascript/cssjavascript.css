@@ -1,0 +1,19 @@
+body{
+	background-color: gray;
+}
+
+h1{
+	text-align: center;
+}
+
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    text-align: center;
+    margin-left: 40%
+}
+
+#buttons{
+	text-align: center;
+}
