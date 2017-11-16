@@ -1,0 +1,35 @@
+div {
+  display: inline-block;
+  font-family: 'Gabriela', serif;
+  border-radius: 20px;
+  padding: 0.5em 0.2em 0.8em 0.5em;
+  background-color: red;
+}
+
+#rotate2{
+	transform:rotate(90deg);
+}
+
+#rotate3{
+	transform:rotate(180deg);
+}
+#rotate4{
+	transform:rotate(270deg);
+}
+
+#translate2{
+	transform:translate(30px);
+}
+
+#translate3{
+	transform:translate(100px,40px);
+}
+
+#scale2{
+	transform:scale(2,2) translate(100px,40px);
+}
+
+#scale3{
+	transform:scale(.5, .5) translate(50px);
+}
+
