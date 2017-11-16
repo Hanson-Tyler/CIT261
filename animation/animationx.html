@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" href="animation.css">
+<style>
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:100px; top:100px;}
+    50%  {background-color:blue; left:100px; top:0px;}
+    75%  {background-color:green; left:0px; top:100px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 3s;
+    /*animation-iteration-count: 3;*/
+    animation-iteration-count: infinite;
+    
+}
+
+#alternate{
+    animation-delay: 3s;
+    animation-direction: alternate;
+}
+
+#reverse{
+    animation-delay: 6s;
+    animation-direction: reverse;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1> X Shaped Animation </h1>
+<h2>Standard Animation No Delay</h2>
+    <div> </div>
+<h2>Alternating Animation 3 Second Delay</h2>
+
+	<div id="alternate"></div>
+
+<h2> Reverse Animation 6 Second Delay</h2>
+    <div id="reverse"> </div>
+
+<a href="animation.html">Standard animation</a>
+<a href="animationsquare.html">Square animation</a>
+<a href="animationx.html">X animation</a>
+</body>
+</html>
+
+
