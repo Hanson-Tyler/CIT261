@@ -1,0 +1,25 @@
+body{
+	background-color: green;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+#wide:hover {
+    width: 300px;
+}
+
+#big:hover {
+    width: 300px;
+    height: 300px;
+}
+
+#spin:hover{
+    width: 300px;
+    height: 300px;	
+	transform: rotate(180deg);
+}
