@@ -1,3 +1,11 @@
+h1{
+	text-align: center;
+}
+
+body{
+	background-color: green;
+}
+
 div {
   display: inline-block;
   font-family: 'Gabriela', serif;
