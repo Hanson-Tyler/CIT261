@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style>
+		body{
+			background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/S15GBCm/nice-cartoon-animation-of-colorful-farm-background-seamless-loop-with-space-for-your-text-or-logo-wheat-filed-over-sunburst-full-hd-and-4k-illustration-of-a-beautiful-autumn-scene-with-wheat-fields_s8m2mirr_thumbnail-full01.png")
+		}
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center"> Farm Animals And their Sounds</h1>
+
+<canvas id="cow" width="256" height = "256"></canvas>
+
+<audio controls> 
+	<source src="cow.wav" type="audio/wav">
+</audio> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RBvHrG87Jiw" frameborder="0" allowfullscreen></iframe><br>
+
+<canvas id="horse" width="256" height = "256"></canvas>
+
+<audio controls> 
+	<source src="horse.wav" type="audio/wav">
+</audio> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OapMBWNgTzU" frameborder="0" allowfullscreen></iframe><br>
+
+<canvas id="pig" width="256" height = "256"></canvas>
+
+<audio controls> 
+	<source src="pig.wav" type="audio/wav">
+</audio> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lfY0tasmh1A" frameborder="0" allowfullscreen></iframe><br>
+
+<canvas id="sheep" width="256" height = "256"></canvas>
+
+<audio controls> 
+	<source src="sheep.wav" type="audio/wav">
+</audio> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GOMXK7HJwoU" frameborder="0" allowfullscreen></iframe><br>
+
+
+
+<script>
+	window.onload = changeCanvas("cow", "https://images.vexels.com/media/users/3/145609/isolated/lists/333e626ad54e31a81c17d882c1d8aa6b-cow-illustration-farm.png");
+
+	window.onload = changeCanvas("horse", "http://downloadicons.net/sites/default/files/horse-icons-53552.png");
+
+	window.onload = changeCanvas("pig", "http://www.emoji.co.uk/files/apple-emojis/animals-nature-ios/268-pig.png");
+
+	window.onload = changeCanvas("sheep", "https://vignette.wikia.nocookie.net/farmingsimulator/images/b/b5/Store_sheep.png/revision/latest?cb=20150713005930");
+
+function changeCanvas(id, source){
+  var myCanvas = document.getElementById(id);
+  var ctx = myCanvas.getContext('2d');
+  var img = new Image;
+  img.onload = function(){
+  ctx.drawImage(img,0,0);
+};
+img.src = source;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="animation.css">
+<style>
+
+/* The animation code */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.standard{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+</style>
+
+</head>
+<body>
+<h1>Simple Div Color Animation</h1>
+	<div id="color"></div>
+    <button id="colorChange" onclick = "startChange()">Start Animation</button>
+    <button id="colorChangeBack" onclick = "stopChange()">Reset Animation</button>
+
+<a href="animationjs.html">Standard animation</a>
+<a href="animationsquarejs.html">Square animation</a>
+<a href="animationxjs.html">X animation</a>
+<a href="transition-js.html">Transitions</a>
+
+
+<script>
+    function startChange(){
+        document.getElementById("color").classList.add("standard");
+    }
+
+    function stopChange(){
+        document.getElementById("color").classList.remove("standard");
+    }
+</script>
+</body>
+</html>
+
+

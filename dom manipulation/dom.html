@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body{
+        background-image: url("https://opensignal.com/dist/images/pages/reports/auto/regions/usa.png")
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Enter the states you have visited</h1>
+<span>States:</span>
+<ul id="myList">
+  <li>Idaho</li>
+</ul>
+
+<p>Enter state and click add to add to list and click reset to start over</p>
+State:
+<input class="textBox" id="state" type="text" maxlength="30" required/>
+<button onclick="addState()">Add State</button>
+<button onclick="resetStates()">Reset</button>
+
+
+<script>
+function addState() {
+    var newItem = document.createElement("LI");
+    var textnode = document.createTextNode(document.getElementById("state").value);
+    newItem.appendChild(textnode);
+
+    var list = document.getElementById("myList");
+    list.insertBefore(newItem, list.childNodes[0]);
+}
+
+function resetStates(){
+	var lis = document.querySelectorAll('#myList li');
+	for(var i=0; li=lis[i]; i++) {
+    	li.parentNode.removeChild(li);
+	}
+}
+</script>
+
+</body>
+</html>

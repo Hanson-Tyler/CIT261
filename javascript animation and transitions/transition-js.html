@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="transition.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1> Hover over to stretch horizontally</h1>
+<div id="wide"></div>
+<button id="wider" onclick="makeWider()">Make Wider </button>
+
+
+<h1> Hover over to stretch horizontally and vertically</h1>
+<div id="big"></div>
+<button id="bigger" onclick="makeBigger()">Make Bigger </button>
+
+<h1> Hover over to spin and grow</h1>
+<div id="spin""></div>
+<button id="spinning" onclick="makeSpin()">Make Spin</button><br>
+
+<a href="animationjs.html">Standard animation</a>
+<a href="animationsquarejs.html">Square animation</a>
+<a href="animationxjs.html">X animation</a>
+<a href="transition-js.html">Transitions</a>
+<script>
+	function makeWider(){
+		document.getElementById("wide").classList.add("wide");
+
+	}
+
+	function makeBigger(){
+		document.getElementById("big").classList.add("big");
+	}
+
+	function makeSpin(){
+		document.getElementById("spin").classList.add("spin");
+	}
+</script>
+</body>
+</html>

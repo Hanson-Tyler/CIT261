@@ -1,0 +1,21 @@
+body{
+	background-color: gray;
+}
+
+div{
+	text-align: center;
+	margin-left: 40%;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+	padding-top: 80px;
+	text-align: center;
+}
+
+a{
+	text-align: center;
+}

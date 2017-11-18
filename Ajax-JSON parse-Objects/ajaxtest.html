@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+  <style>
+  body{
+    background-image: url(http://hddesktopwallpapers.in/wp-content/uploads/2015/07/harry-potter-wallpaper-hogwarts.jpg);
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <h2>Choose a wizard to learn more about them</h2>
+  <button type="button" onclick="loadDoc(0)">Harry Potter</button>
+    <button type="button" onclick="loadDoc(1)">Ronald Weasley</button>
+  <button type="button" onclick="loadDoc(2)">Hermione Granger</button>
+  <button type="button" onclick="loadDoc(3)">Draco Malfoy</button>
+  <button type="button" onclick="loadDoc(4)">Luna Lovegood</button>
+
+
+</div>
+
+<div id="demo"></div>
+<script>
+var url = "https://api.myjson.com/bins/uwd1f";
+
+function loadDoc(id) {
+  var xhttp = new XMLHttpRequest();
+       if (!xhttp) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var info = JSON.parse(this.responseText);
+      document.getElementById("demo").innerHTML = printString(info.wizards[id].firstname, info.wizards[id].lastname, info.wizards[id].age, info.wizards[id].wand, info.wizards[id].house);
+    }
+  };
+
+
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function printString(firstname, lastname, age, wand, house){
+ var message = "Name: " + firstname + " " + lastname + "    Age: " + age + "    Wand Core: " + wand + "" + "Hogwart's House: " + house;
+
+  return message;
+}
+
+function changeCanvas(height, width, source){
+  var myCanvas = document.getElementById('mycanvas');
+  myCanvas.height = height;
+  myCanvas.width = width;
+  var ctx = myCanvas.getContext('2d');
+  var img = new Image;
+  img.onload = function(){
+  ctx.drawImage(img,0,0);
+};
+img.src = source;
+}
+
+</script>
+
+</body>
+</html>
+

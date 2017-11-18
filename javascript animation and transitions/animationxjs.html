@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" href="animation.css">
+<style>
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:100px; top:100px;}
+    50%  {background-color:blue; left:100px; top:0px;}
+    75%  {background-color:green; left:0px; top:100px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+
+    
+}
+.standard{
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.alternate{
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.reverse{
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1> X Shaped Animation </h1>
+<h2>Standard Animation No Delay</h2>
+    <div id="standard"> </div>
+    <button id = "startStandard" onclick = "startStandard()">Start Animation</button>
+    <button id = "stopStandard" onclick = "stopStandard()""> Reset Animation</button>
+<h2>Alternating Animation 3 Second Delay</h2>
+
+	<div id="alternate"></div>
+    <button id = "startAlternate" onclick = "startAlternate()">Start Animation</button>
+    <button id = "stopAlternate" onclick = "stopAlternate()""> Reset Animation</button>
+
+<h2> Reverse Animation 6 Second Delay</h2>
+    <div id="reverse"> </div>
+    <button id = "startReverse" onclick = "startReverse()">Start Animation</button>
+    <button id = "stopReverse" onclick = "stopReverse()""> Reset Animation</button><br>
+
+<a href="animationjs.html">Standard animation</a>
+<a href="animationsquarejs.html">Square animation</a>
+<a href="animationxjs.html">X animation</a>
+<a href="transition-js.html">Transitions</a>
+
+<script>
+    function startStandard(){
+        document.getElementById("standard").classList.add("standard");
+    }
+
+    function stopStandard(){
+        document.getElementById("standard").classList.remove("standard");
+    }
+
+        function startAlternate(){
+        document.getElementById("alternate").classList.add("alternate");
+    }
+
+    function stopAlternate(){
+        document.getElementById("alternate").classList.remove("alternate");
+    }
+
+    function startReverse(){
+        document.getElementById("reverse").classList.add("reverse");
+    }
+
+    function stopReverse(){
+        document.getElementById("reverse").classList.remove("reverse");
+    }
+</script>
+
+</body>
+</html>
+
+
