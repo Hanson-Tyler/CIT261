@@ -20,9 +20,9 @@
 </head>
 <body onload="displayPreviousVisit()">
 
-<h1> List of Wizards stored with their information </h1>
+<h1 id = "header" onmouseover="changeColor('green', 'header')" onmouseout="revertColor('header')"> List of Wizards stored with their information </h1>
 
-<table id="people" onmouseover="changeColor()" onmouseout="revertColor()" bgcolor="white">
+<table id="people" onmouseover="changeColor('blue', 'people')" onmouseout="revertColor('people')" bgcolor="white">
 	<tr>
 		<th>Full Name</th>
 		<th>Age</th>
@@ -92,12 +92,12 @@
 		addToTable("people", i + 1, wizards[i].fullName(), wizards[i].age, wizards[i].wand, wizards[i].house, wizards[i].birthday);
 	}
     
-    function changeColor(){
-    	document.getElementById("people").style.color = "blue";
+    function changeColor(choice, id){
+    	document.getElementById(id).style.color = choice;
     }
 
-    function revertColor(){
-		document.getElementById("people").style.color = "red";    	
+    function revertColor(id){
+		document.getElementById(id).style.color = "red";    	
     }
 </script>
 
