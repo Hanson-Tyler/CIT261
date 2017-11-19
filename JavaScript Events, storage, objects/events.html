@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style>
+  	body{
+    	background-image: url(http://hddesktopwallpapers.in/wp-content/uploads/2015/07/harry-potter-wallpaper-hogwarts.jpg);
+    	color: red;
+  	}
+	table, th, td {
+   		border: 1px solid black;
+    	border-collapse: collapse;
+	}
+	th, td {
+    	padding: 5px;
+    	text-align: left;    
+	}
+</style>
+</head>
+<body onload="displayPreviousVisit()">
+
+<h1> List of Wizards stored with their information </h1>
+
+<table id="people" onmouseover="changeColor()" onmouseout="revertColor()" bgcolor="white">
+	<tr>
+		<th>Full Name</th>
+		<th>Age</th>
+		<th>Wand Core</th>
+		<th>Hogwart's House</th>
+		<th>Birthday</th>
+	</tr>
+
+</table>
+
+<script>
+	function displayPreviousVisit(){
+		if(localStorage.getItem("previousDate") === null){
+			localStorage.previousDate = Date();
+		}
+		else
+		{
+			alert("Last time you visited this page was " + localStorage.previousDate);
+			localStorage.previousDate = Date();
+		}
+		
+	}
+
+	function wizard(firstname, lastname, age, wand, house, birthday){
+		this.firstname = firstname, 
+		this.lastname = lastname, 
+		this.age = age, 
+		this.wand = wand, 
+		this.house = house, 
+		this.birthday = birthday,
+		this.fullName = function(){
+			return(this.firstname + " " + this.lastname);
+		};
+
+	}
+
+	var harry = new wizard("Harry", "Potter", "37", "Phoenix Feather", "Gryffindor", "07/31/1980");
+
+	var ron = new wizard("Ronald", "Weasley", "37", "Unicorn Tail Hair", "Gryffindor", "3/1/1980");
+
+	var hermione = new wizard("Hermione", "Granger", "38", "Dragon Heartstring", "Gryffindor", "9/19/1979");
+
+	var draco = new wizard("Draco", "Malfoy", "37", "Dragon Heartstring", "Slytherin", "6/5/1980");
+
+	var luna = new wizard("Luna", "Lovegood", "36", "Unknown", "Ravenclaw", "2/13/1981");
+
+	var wizards = [harry, ron, hermione, draco, luna];
+
+
+	function addToTable(id, count, name, age, wand, house, birthday){
+		var table = document.getElementById(id);
+		var row = table.insertRow(count);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+
+		cell1.innerHTML = name;
+		cell2.innerHTML = age;
+		cell3.innerHTML = wand;
+		cell4.innerHTML = house;
+		cell5.innerHTML = birthday;
+	}
+
+	for(i = 0; i < wizards.length; i++){
+		addToTable("people", i + 1, wizards[i].fullName(), wizards[i].age, wizards[i].wand, wizards[i].house, wizards[i].birthday);
+	}
+    
+    function changeColor(){
+    	document.getElementById("people").style.color = "blue";
+    }
+
+    function revertColor(){
+		document.getElementById("people").style.color = "red";    	
+    }
+</script>
+
+
+</body>
+</html>
